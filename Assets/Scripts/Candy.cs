@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Candy : MonoBehaviour
 {
-    // Update is called once per frame
+    public int scorePoints = 100;
+    public float rotateSpeed = 50f;
+
     void Update()
     {
         transform.Rotate(Vector3.up, Time.deltaTime * rotateSpeed);
@@ -12,10 +14,7 @@ public class Candy : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        UIManager.Instance.IncreaseScore(ScorePoints);
+        UIManager.instance.IncreaseScore(scorePoints);
         Destroy(this.gameObject);
     }
-
-    public int ScorePoints = 100;
-    public float rotateSpeed = 50f;
 }

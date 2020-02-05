@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class RandomMaterial : MonoBehaviour {
 
-    // Use this for initialization
     void Awake () {
-        GetComponent().material = GetRandomMaterial();
+        GetComponent<Renderer>().material = GetRandomMaterial();
     }
 
     public Material GetRandomMaterial() {

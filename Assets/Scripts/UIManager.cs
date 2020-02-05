@@ -5,11 +5,26 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    private static UIManager _instance;
+    public static UIManager instance
+    {
+        get
+        {
+            if (_instance == null)
+                _instance = new UIManager();
+
+            return _instance;
+        }
+    }
+
+    private float score = 0;
+    public Text scoreText, statusText;
+
     void Awake()
     {
-        if (instance == null)
+        if (_instance == null)
         {
-            instance = this;
+            _instance = this;
         }
         else
         {
@@ -17,24 +32,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    //singleton implementation
-    private static UIManager instance;
-    public static UIManager Instance
-    {
-        get
-        {
-            if (instance == null)
-                instance = new UIManager();
-
-            return instance;
-        }
-    }
-
     protected UIManager()
     {
     }
-
-    private float score = 0;
 
     public void ResetScore()
     {
@@ -56,15 +56,14 @@ public class UIManager : MonoBehaviour
 
     private void UpdateScoreText()
     {
-        ScoreText.text = score.ToString();
+        scoreText.text = score.ToString();
     }
 
     public void SetStatus(string text)
     {
-        StatusText.text = text;
+        statusText.text = text;
     }
 
-    public Text ScoreText, StatusText;
-    //public string ScoreText, StatusText;
+
 
 }
