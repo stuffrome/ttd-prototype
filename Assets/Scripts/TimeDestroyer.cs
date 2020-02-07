@@ -8,7 +8,8 @@ public class TimeDestroyer : MonoBehaviour
 
     void Start()
     {
-        Invoke("DestroyObject", lifeTime);
+        //if(GameManager.instance.gameState == GameState.Playing)
+            Invoke("DestroyObject", lifeTime);
     }
 
     void DestroyObject()
