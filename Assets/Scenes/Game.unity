@@ -335,9 +335,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0f073dbf0ed4fc6aae3024316bd7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 4
+  jump: 5
   gravity: 12
   speed: 10
+  playerModel: {fileID: 838122141}
 --- !u!114 &423730723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,7 +439,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 477910119}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &477910123
 Camera:
   m_ObjectHideFlags: 0
@@ -738,7 +739,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -1297,9 +1298,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0f073dbf0ed4fc6aae3024316bd7e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 4
+  jump: 5
   gravity: 12
   speed: 10
+  playerModel: {fileID: 1797250624}
 --- !u!114 &1928614142
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,23 +5,28 @@ using InputDetection;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Position of the center lane
-    private Vector3 defaultPosition;
+    // Internal constants
+    private const float ROTATION_SPEED = 0.5f;
+    private const float GROUNDING_VELOCITY = -0.1f;
 
     // These fields are serialized for testing.
     // NOTE: Serialization can be removed for prod
     [SerializeField]
-    private float jump = 4f;
+    private float jump = 5f;
     [SerializeField]
     private float gravity = 12f;
     [SerializeField]
     private float speed = 10f;
 
+    public Transform playerModel;
+
     private LaneTracker laneTracker;
     private CharacterController controller;
     private InputDetector inputDetector;
+    private Animator animator;
 
     private float verticalVelocity;
+    private Vector3 defaultPosition;
 
 
     private void Start()
@@ -31,48 +36,76 @@ public class PlayerMovement : MonoBehaviour
 
         controller = GetComponent<CharacterController>();
         inputDetector = GetComponent<InputDetector>();
+        animator = playerModel.GetComponent<Animator>();
     }
 
     private void Update()
     {
-        GatherInput();
+        DetermineMovement();
         MovePlayer();
     }
 
-    private void GatherInput()
+    private void DetermineMovement()
     {
-        InputDirection? inputDirection = inputDetector.DetectInputDirection();
-        if (inputDirection.HasValue)
+        if (controller.isGrounded)
         {
-            switch (inputDirection.Value)
+            verticalVelocity = GROUNDING_VELOCITY;
+            animator.SetBool(Constants.animationGrounded, true);
+
+            InputDirection? inputDirection = inputDetector.DetectInputDirection();
+            if (inputDirection.HasValue)
             {
-                case InputDirection.Left:
-                    laneTracker.MoveLeft();
-                break;
 
-                case InputDirection.Right:
-                    laneTracker.MoveRight();
-                break;
+                switch (inputDirection.Value)
+                {
+                    case InputDirection.Left:
+                        laneTracker.MoveLeft();
+                    break;
 
-                case InputDirection.Up:
-                break;
+                    case InputDirection.Right:
+                        laneTracker.MoveRight();
+                    break;
 
-                case InputDirection.Down:
-                break;
+                    case InputDirection.Up:
+                        verticalVelocity = jump;
+                        animator.SetTrigger(Constants.animationJump);
+                    break;
+
+                    case InputDirection.Down:
+                        animator.SetTrigger(Constants.animationSlide);
+                    break;
+                }
             }
+        }
+        else
+        {
+            verticalVelocity -= gravity * Time.deltaTime;
+            animator.SetBool(Constants.animationGrounded, false);
         }
     }
 
     private void MovePlayer()
     {
+        // Calc target pos
         Vector3 targetPosition = Vector3.zero;
         targetPosition.x = defaultPosition.x + laneTracker.lane * Constants.laneWidth;
 
+        // Calc delta to target pos
         Vector3 moveVector = Vector3.zero;
         moveVector.x = (targetPosition.x - transform.position.x) * speed;
-        moveVector.y = -0.1f;
+        moveVector.y = verticalVelocity;
         moveVector.z = speed;
 
+        // Move player to target pos
         controller.Move(moveVector * Time.deltaTime);
+
+        // Rotate player in dir of target pos
+        Vector3 direction = controller.velocity;
+        if (direction != Vector3.zero)
+        {
+            direction.y = 0;
+            transform.forward =
+                Vector3.Lerp(transform.forward, direction, ROTATION_SPEED);
+        }
     }
 }
