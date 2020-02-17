@@ -3,16 +3,18 @@ using UnityEngine;
 
 public class WASDKeysDetector : MonoBehaviour, InputDetector
 {
-    public InputDirection? DetectInputDirection()
+    public InputAction? DetectInput()
     {
         if (Input.GetKeyUp(KeyCode.W))
-            return InputDirection.Up;
+            return InputAction.Up;
         else if (Input.GetKeyUp(KeyCode.S))
-            return InputDirection.Down;
+            return InputAction.Down;
         else if (Input.GetKeyUp(KeyCode.D))
-            return InputDirection.Right;
+            return InputAction.Right;
         else if (Input.GetKeyUp(KeyCode.A))
-            return InputDirection.Left;
+            return InputAction.Left;
+        else if (Input.GetKeyUp(KeyCode.Space))
+            return InputAction.Ability;
         else
             return null;
     }

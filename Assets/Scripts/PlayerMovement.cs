@@ -52,26 +52,26 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity = GROUNDING_VELOCITY;
             animator.SetBool(Constants.animationGrounded, true);
 
-            InputDirection? inputDirection = inputDetector.DetectInputDirection();
-            if (inputDirection.HasValue)
+            InputAction? inputAction = inputDetector.DetectInput();
+            if (inputAction.HasValue)
             {
 
-                switch (inputDirection.Value)
+                switch (inputAction.Value)
                 {
-                    case InputDirection.Left:
+                    case InputAction.Left:
                         laneTracker.MoveLeft();
                     break;
 
-                    case InputDirection.Right:
+                    case InputAction.Right:
                         laneTracker.MoveRight();
                     break;
 
-                    case InputDirection.Up:
+                    case InputAction.Up:
                         verticalVelocity = jump;
                         animator.SetTrigger(Constants.animationJump);
                     break;
 
-                    case InputDirection.Down:
+                    case InputAction.Down:
                         animator.SetTrigger(Constants.animationSlide);
                     break;
                 }
@@ -107,5 +107,15 @@ public class PlayerMovement : MonoBehaviour
             transform.forward =
                 Vector3.Lerp(transform.forward, direction, ROTATION_SPEED);
         }
+    }
+
+    public int getLane(){
+        return laneTracker.lane;
+    }
+
+    //prototype purposes. Player ability is to cause each other to do something unplanned
+    public void kick(){
+        // laneTracker.MoveRight();
+        animator.SetTrigger(Constants.animationSlide);
     }
 }

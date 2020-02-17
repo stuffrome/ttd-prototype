@@ -3,16 +3,18 @@ using UnityEngine;
 
 public class ArrowKeysDetector : MonoBehaviour, InputDetector
 {
-    public InputDirection? DetectInputDirection()
+    public InputAction? DetectInput()
     {
         if (Input.GetKeyUp(KeyCode.UpArrow))
-            return InputDirection.Up;
+            return InputAction.Up;
         else if (Input.GetKeyUp(KeyCode.DownArrow))
-            return InputDirection.Down;
+            return InputAction.Down;
         else if (Input.GetKeyUp(KeyCode.RightArrow))
-            return InputDirection.Right;
+            return InputAction.Right;
         else if (Input.GetKeyUp(KeyCode.LeftArrow))
-            return InputDirection.Left;
+            return InputAction.Left;
+        else if (Input.GetKeyUp(KeyCode.Return))
+            return InputAction.Ability;
         else
             return null;
     }
