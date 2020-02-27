@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Environment : MonoBehaviour
 {
-    private Player player;
+    public Player player { get ; private set; }
 
     void Start()
     {
-        GetPlayer();
+        FindPlayerComponent();
     }
 
     void Update()
@@ -16,7 +16,7 @@ public class Environment : MonoBehaviour
 
     }
 
-    private void GetPlayer()
+    private void FindPlayerComponent()
     {
         for (int i = 0; i < transform.childCount; i++)
         {
