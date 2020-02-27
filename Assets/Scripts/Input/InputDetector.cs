@@ -5,11 +5,11 @@ namespace InputDetection
 {
     public interface InputDetector
     {
-        InputDirection? DetectInputDirection();
+        InputAction? DetectInputDirection();
     }
 
-    public enum InputDirection
+    public enum InputAction
     {
-        Left, Right, Up, Down
+        Left, Right, Up, Down, Item
     }
 }

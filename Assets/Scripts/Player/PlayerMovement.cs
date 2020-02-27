@@ -52,27 +52,30 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity = GROUNDING_VELOCITY;
             animator.SetBool(Constants.animationGrounded, true);
 
-            InputDirection? inputDirection = inputDetector.DetectInputDirection();
-            if (inputDirection.HasValue)
+            InputAction? inputAction = inputDetector.DetectInputDirection();
+            if (inputAction.HasValue)
             {
 
-                switch (inputDirection.Value)
+                switch (inputAction.Value)
                 {
-                    case InputDirection.Left:
+                    case InputAction.Left:
                         laneTracker.MoveLeft();
                     break;
 
-                    case InputDirection.Right:
+                    case InputAction.Right:
                         laneTracker.MoveRight();
                     break;
 
-                    case InputDirection.Up:
+                    case InputAction.Up:
                         verticalVelocity = jump;
                         animator.SetTrigger(Constants.animationJump);
                     break;
 
-                    case InputDirection.Down:
+                    case InputAction.Down:
                         animator.SetTrigger(Constants.animationSlide);
+                    break;
+
+                    default:
                     break;
                 }
             }
