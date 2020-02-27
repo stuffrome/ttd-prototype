@@ -10,6 +10,10 @@ namespace InputDetection
 
     public enum InputAction
     {
-        Left, Right, Up, Down, Item
+        Left,
+        Right,
+        Up,
+        Down,
+        Item
     }
 }
