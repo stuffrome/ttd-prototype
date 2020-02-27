@@ -117,5 +117,8 @@ public class PlayerMovement : MonoBehaviour
         speedMultiplier = multiplier;
     }
 
-    public int GetLane();
+    public int GetLane()
+    {
+        return laneTracker.lane;
+    }
 }

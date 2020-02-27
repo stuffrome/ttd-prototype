@@ -24,8 +24,9 @@ public class Player : MonoBehaviour
 
     }
 
-    public int GetLane() {
-        movement.GetLane();
+    public int GetLane()
+    {
+        return movement.GetLane();
     }
 
     public void CollectToken()
