@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ArrowKeysDetector : MonoBehaviour, InputDetector
 {
-    public InputAction? DetectInputDirection()
+    public InputAction? DetectInput()
     {
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {

@@ -5,7 +5,7 @@ namespace InputDetection
 {
     public interface InputDetector
     {
-        InputAction? DetectInputDirection();
+        InputAction? DetectInput();
     }
 
     public enum InputAction

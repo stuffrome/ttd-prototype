@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             verticalVelocity = GROUNDING_VELOCITY;
             animator.SetBool(Constants.animationGrounded, true);
 
-            InputAction? inputAction = inputDetector.DetectInputDirection();
+            InputAction? inputAction = inputDetector.DetectInput();
             if (inputAction.HasValue)
             {
 

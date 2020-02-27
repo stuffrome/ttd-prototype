@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WASDKeysDetector : MonoBehaviour, InputDetector
 {
-    public InputAction? DetectInputDirection()
+    public InputAction? DetectInput()
     {
         if (Input.GetKeyUp(KeyCode.W))
         {
