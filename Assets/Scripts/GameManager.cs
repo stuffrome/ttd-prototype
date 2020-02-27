@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Environment env1;
-    public Environment env2;
+    public Environment env1, env2;
 
     private void Start()
     {
-
+                
     }
 }

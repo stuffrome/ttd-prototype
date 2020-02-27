@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     private PlayerMovement movement;
     private Item item;
+    [SerializeField]
     private int tokenCount;
 
 
