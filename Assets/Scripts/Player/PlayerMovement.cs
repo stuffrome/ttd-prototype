@@ -16,7 +16,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float gravity = 12f;
     [SerializeField]
-    private float speed = 10f;
+    private float baseSpeed = 10f;
+    private float speedMultiplier = 1.0f;
 
     // Components
     private CharacterController controller;
@@ -91,9 +92,9 @@ public class PlayerMovement : MonoBehaviour
 
         // Calc delta to target pos
         Vector3 moveVector = Vector3.zero;
-        moveVector.x = (targetPosition.x - transform.position.x) * speed;
-        moveVector.y = verticalVelocity;
-        moveVector.z = speed;
+        moveVector.x = (targetPosition.x - transform.position.x) * baseSpeed; // horizontal
+        moveVector.y = verticalVelocity; // vertical
+        moveVector.z = baseSpeed * speedMultiplier; // forward
 
         // Move player to target pos
         controller.Move(moveVector * Time.deltaTime);
@@ -106,5 +107,9 @@ public class PlayerMovement : MonoBehaviour
             transform.forward =
                 Vector3.Lerp(transform.forward, direction, ROTATION_SPEED);
         }
+    }
+
+    public void SetSpeedMultiplier(float multiplier) {
+        speedMultiplier = multiplier;
     }
 }

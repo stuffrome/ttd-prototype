@@ -25,5 +25,6 @@ public class Player : MonoBehaviour
             tokenCount++;
         }
 
+        movement.SetSpeedMultiplier(1.0f + (float)tokenCount/10f);
     }
 }
