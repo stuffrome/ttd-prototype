@@ -12,4 +12,7 @@ public static class Constants
     // Lanes
     public static readonly int laneCount = 3;
     public static readonly float laneWidth = 2;
+
+    //Tags
+    public static readonly string tagPlayer = "Player";
 }

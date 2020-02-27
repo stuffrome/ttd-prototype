@@ -18,13 +18,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float speed = 10f;
 
-    public Transform playerModel;
-
-    private LaneTracker laneTracker;
+    // Components
     private CharacterController controller;
     private InputDetector inputDetector;
     private Animator animator;
 
+    private LaneTracker laneTracker;
     private float verticalVelocity;
     private Vector3 defaultPosition;
 
@@ -36,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
         controller = GetComponent<CharacterController>();
         inputDetector = GetComponent<InputDetector>();
-        animator = playerModel.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
