@@ -121,4 +121,9 @@ public class PlayerMovement : MonoBehaviour
     {
         return laneTracker.lane;
     }
+
+    public void Stumble()
+    {
+        animator.SetTrigger(Constants.animationSlide);
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private const int TOKEN_MAX = 10;
+    private const int TOKEN_LOSS_ON_HIT = 3;
 
     private PlayerMovement movement;
     private Item item;
@@ -39,6 +40,18 @@ public class Player : MonoBehaviour
         movement.SetSpeedMultiplier(1.0f + (float)tokenCount/10f);
     }
 
+    private void LoseTokens(int count)
+    {
+        if (count > tokenCount)
+        {
+            tokenCount = 0;
+        }
+        else
+        {
+            tokenCount -= count;
+        }
+    }
+
     public Item CurrentItem()
     {
         return item;
@@ -50,5 +63,11 @@ public class Player : MonoBehaviour
         {
             item = newItem;
         }
+    }
+
+    public void Hit()
+    {
+        movement.Stumble();
+        LoseTokens(TOKEN_LOSS_ON_HIT);
     }
 }
