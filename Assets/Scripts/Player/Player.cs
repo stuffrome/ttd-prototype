@@ -20,9 +20,10 @@ public class Player : MonoBehaviour
 
     }
 
-    public collectToken() {
+    public void collectToken() {
         if (tokenCount < TOKEN_MAX) {
             tokenCount++;
         }
+
     }
 }
