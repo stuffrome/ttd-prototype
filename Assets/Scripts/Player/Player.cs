@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         movement = gameObject.AddComponent(typeof(PlayerMovement)) as PlayerMovement;
+
+        tokenCount = 0;
     }
 
     void Update()
