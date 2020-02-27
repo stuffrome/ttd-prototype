@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private const int TOKEN_MAX = 10;
+
     private PlayerMovement movement;
+    private int tokenCount;
 
 
     void Start()
@@ -15,5 +18,11 @@ public class Player : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public collectToken() {
+        if (tokenCount < TOKEN_MAX) {
+            tokenCount++;
+        }
     }
 }
