@@ -24,6 +24,10 @@ public class Player : MonoBehaviour
 
     }
 
+    public int GetLane() {
+        movement.GetLane();
+    }
+
     public void CollectToken()
     {
         if (tokenCount < TOKEN_MAX)

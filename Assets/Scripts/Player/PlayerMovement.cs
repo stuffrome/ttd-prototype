@@ -116,4 +116,6 @@ public class PlayerMovement : MonoBehaviour
     {
         speedMultiplier = multiplier;
     }
+
+    public int GetLane();
 }
