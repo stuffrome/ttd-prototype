@@ -23,6 +23,7 @@ public class CameraMovement : MonoBehaviour
     {
         Vector3 targetPosition = transform.position;
         targetPosition.z = lookAt.position.z + positionOffset.z;
+        targetPosition.x = lookAt.position.x + positionOffset.x;
 
         transform.position = targetPosition;
     }

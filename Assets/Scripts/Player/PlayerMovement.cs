@@ -110,6 +110,25 @@ public class PlayerMovement : MonoBehaviour
             transform.forward =
                 Vector3.Lerp(transform.forward, direction, ROTATION_SPEED);
         }
+
+        // Change player collider
+        if (animator.GetBool(Constants.animationSlide))
+        {
+            StartSlide();
+        }
+    }
+
+    private void StartSlide()
+    {
+        controller.height /= 2;
+        controller.center = new Vector3(controller.center.x, controller.center.y/2, controller.center.z);
+        Invoke("EndSlide", 0.5f);
+    }
+
+    private void EndSlide()
+    {
+        controller.height *= 2;
+        controller.center = new Vector3(controller.center.x, controller.center.y*2, controller.center.z);
     }
 
     public void SetSpeedMultiplier(float multiplier)
