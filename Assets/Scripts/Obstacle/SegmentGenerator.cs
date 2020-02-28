@@ -6,6 +6,8 @@ public class SegmentGenerator : MonoBehaviour
 {
     private const int MAX_SEGS = 15;
     private const int CONTINUOUS_SEGS_MAX = 5;
+    private const int START_BUFFER = 30;
+    private const int SEGMENT_BUFFER = 4;
 
     private int activeSegCount;
     private int continuousSegCount;
@@ -20,6 +22,7 @@ public class SegmentGenerator : MonoBehaviour
     public void GenerateSegments(Vector3 startPosition, int count)
     {
         spawnPoint = startPosition;
+        spawnPoint.z += START_BUFFER;
 
         for (int i = 0; i < count; i++)
         {
@@ -42,10 +45,9 @@ public class SegmentGenerator : MonoBehaviour
 
         Segment segment = GetSegment(id, false);
 
-        segment.transform.SetParent(transform);
         segment.transform.position = spawnPoint;
 
-        spawnPoint.z += segment.length;
+        spawnPoint.z += segment.length + SEGMENT_BUFFER;
         activeSegCount++;
         segment.Spawn();
     }
@@ -56,7 +58,6 @@ public class SegmentGenerator : MonoBehaviour
 
         Segment segment = GetSegment(id, true);
 
-        // segment.transform.SetParent(transform);
         segment.transform.position = spawnPoint;
 
         spawnPoint.z += segment.length;
