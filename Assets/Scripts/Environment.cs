@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Environment : MonoBehaviour
 {
-    private const int DEFAULT_SEGMENT_COUNT = 30;
+    private const int DEFAULT_SEGMENT_COUNT = 85;
 
     public SegmentGenerator segmentGenerator;
 

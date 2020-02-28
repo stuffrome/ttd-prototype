@@ -80,8 +80,7 @@ public class SegmentGenerator : MonoBehaviour
             {
                 go = availableSegs[segmentId].gameObject;
             }
-
-            Instantiate(go as GameObject);
+            go = Instantiate(go as GameObject);
             segment = go.GetComponent<Segment>();
 
             segment.segmentId = segmentId;
