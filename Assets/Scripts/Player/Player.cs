@@ -71,4 +71,8 @@ public class Player : MonoBehaviour
         movement.Stumble();
         LoseTokens(TOKEN_LOSS_ON_HIT);
     }
+
+    public int GetTokens(){
+        return tokenCount;
+    }
 }
