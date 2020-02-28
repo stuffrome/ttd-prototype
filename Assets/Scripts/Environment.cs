@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class Environment : MonoBehaviour
 {
-    public Player player { get ; private set; }
+    private const int DEFAULT_SEGMENT_COUNT = 10;
+
+    public SegmentGenerator segmentGenerator;
+
+    public Player player { get; private set; }
+
 
     void Start()
     {
         player = GetPlayerObject().GetComponent<Player>();
+        SetupObstacles();
     }
 
-    void Update()
+    private void SetupObstacles()
     {
-
+        Vector3 startPosition = GetPlayerObject().transform.position;
+        segmentGenerator.GenerateSegments(startPosition, DEFAULT_SEGMENT_COUNT);
     }
 
     public GameObject GetPlayerObject()
