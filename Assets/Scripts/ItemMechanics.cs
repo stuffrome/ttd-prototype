@@ -9,6 +9,8 @@ public class ItemMechanics : MonoBehaviour
     private InputDetector p1Input, p2Input;
     private enum Player{P1, P2}
 
+    private IItem emptyItem = new IItem();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,8 @@ public class ItemMechanics : MonoBehaviour
 
     private void DetermineInteraction(Player player){
         if(GetInput(player).HasValue && GetInput(player).Value == InputAction.Item){
-            if(GetLane(player) == GetEnemyLane(player)){HitEnemy(player);}
+            // if(GetLane(player) == GetEnemyLane(player)){HitEnemy(player);}
+            UseItem(player);
         }
     }
 
@@ -45,6 +48,20 @@ public class ItemMechanics : MonoBehaviour
         if(player == Player.P1){return -1*env2.player.GetLane();}
         if(player == Player.P2){return -1*env1.player.GetLane();}
         return null;
+    }
+    private void UseItem(Player player){
+        if(player == Player.P1){
+            env1.player.CurrentItem().UseItem(env2.player);
+            // env2.player.Hit();
+            Debug.Log("P1 using "+ env1.player.CurrentItem().GetItem().ToString(""));
+            env1.player.CollectItem(emptyItem);
+        }
+        else if(player == Player.P2){
+            env2.player.CurrentItem().UseItem(env1.player);
+            // env1.player.Hit();
+            Debug.Log("P2 using "+ env2.player.CurrentItem().GetItem().ToString(""));
+            env2.player.CollectItem(emptyItem);
+        }
     }
     private void HitEnemy(Player player){
         if(player == Player.P1){env2.player.Hit();}

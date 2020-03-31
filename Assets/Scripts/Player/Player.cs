@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     private const int TOKEN_LOSS_ON_HIT = 3;
 
     private PlayerMovement movement;
-    private Item item;
+    [SerializeField]
+    private IItem item;
     [SerializeField]
     private int tokenCount;
 
@@ -17,7 +18,8 @@ public class Player : MonoBehaviour
     {
         movement = gameObject.AddComponent(typeof(PlayerMovement)) as PlayerMovement;
 
-        item = Item.None;
+        // item = Item.None;
+        item = new IItem();
         tokenCount = 0;
     }
 
@@ -53,17 +55,14 @@ public class Player : MonoBehaviour
         }
     }
 
-    public Item CurrentItem()
+    public IItem CurrentItem()
     {
         return item;
     }
 
-    public void CollectItem(Item newItem)
+    public void CollectItem(IItem newItem)
     {
-        if (item == Item.None)
-        {
-            item = newItem;
-        }
+        item = newItem;
     }
 
     public void Hit()
