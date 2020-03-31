@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SegmentGenerator : MonoBehaviour
 {
-    private const int MAX_SEGS = 15;
     private const int CONTINUOUS_SEGS_MAX = 5;
     private const int START_BUFFER = 30;
     private const int SEGMENT_BUFFER = 4;
+    private const int MAX_SPAWN_DISTANCE = 100;
+    private const int DESPAWN_BUFFER = 20;
 
     private int activeSegCount;
     private int continuousSegCount;
@@ -19,23 +20,41 @@ public class SegmentGenerator : MonoBehaviour
     private List<Segment> activeSegs = new List<Segment>();
 
 
-    public void GenerateSegments(Vector3 startPosition, int count)
-    {
+    public void SetStartPosition(Vector3 startPosition) {
         spawnPoint = startPosition;
         spawnPoint.z += START_BUFFER;
+    }
 
-        for (int i = 0; i < count; i++)
+    public void UpdateSegments(Vector3 playerPosition) {
+        SpawnSegmentsAhead(playerPosition);
+        DespawnSegmentsBehind(playerPosition);
+    }
+
+    public void SpawnSegmentsAhead(Vector3 playerPosition) {
+        if (spawnPoint.z - playerPosition.z < MAX_SPAWN_DISTANCE) {
+            GenerateSegment();
+        }
+    }
+
+    public void DespawnSegmentsBehind(Vector3 playerPosition) {
+        foreach (Segment segment in activeSegs) {
+            if (segment.transform.position.z < playerPosition.z - DESPAWN_BUFFER) {
+                segment.Despawn();
+                activeSegs.Remove(segment);
+            }
+        }
+    }
+
+    private void GenerateSegment() {
+        if (continuousSegCount < CONTINUOUS_SEGS_MAX)
         {
-            if (continuousSegCount < CONTINUOUS_SEGS_MAX)
-            {
-                SpawnSegment();
-                continuousSegCount++;
-            }
-            else
-            {
-                SpawnTransition();
-                continuousSegCount = 0;
-            }
+            SpawnSegment();
+            continuousSegCount++;
+        }
+        else
+        {
+            SpawnTransition();
+            continuousSegCount = 0;
         }
     }
 

@@ -10,17 +10,23 @@ public class Environment : MonoBehaviour
 
     public Player player { get; private set; }
 
+    private GameObject playerObject;
 
-    void Start()
+    private void Start()
     {
-        player = GetPlayerObject().GetComponent<Player>();
-        SetupObstacles();
+        playerObject = GetPlayerObject();
+        player = playerObject.GetComponent<Player>();
+        SetupSegmentGenerator();
     }
 
-    private void SetupObstacles()
+    private void Update() {
+        segmentGenerator.UpdateSegments(playerObject.transform.position);
+    }
+
+    private void SetupSegmentGenerator()
     {
-        Vector3 startPosition = GetPlayerObject().transform.position;
-        segmentGenerator.GenerateSegments(startPosition, DEFAULT_SEGMENT_COUNT);
+        Vector3 startPosition = playerObject.transform.position;
+        segmentGenerator.SetStartPosition(startPosition);
     }
 
     public GameObject GetPlayerObject()
