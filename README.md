@@ -1,4 +1,4 @@
-# Tiki Temple Dude [ALPHA]
+# Tiki Temple Dude [BETA]
 
 More like Icy Igloo Penguin, but hey... it's an alpha build.
 
