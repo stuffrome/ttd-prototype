@@ -9,15 +9,19 @@ public class SegmentGenerator : MonoBehaviour
     private const int SEGMENT_BUFFER = 4;
     private const int MAX_SPAWN_DISTANCE = 100;
     private const int DESPAWN_BUFFER = 20;
+    private const int TERRAIN_LENGTH = 6;
 
     private int activeSegCount;
     private int continuousSegCount;
+    private int terrainCounter;
 
     private Vector3 spawnPoint;
 
     public List<Segment> availableSegs = new List<Segment>();
     public List<Segment> availableTrans = new List<Segment>();
     private List<Segment> activeSegs = new List<Segment>();
+
+    public List<TerrainBlock> terrainList = new List<TerrainBlock>();
 
 
     public void SetStartPosition(Vector3 startPosition) {
@@ -65,10 +69,12 @@ public class SegmentGenerator : MonoBehaviour
         Segment segment = GetSegment(id, false);
 
         segment.transform.position = spawnPoint;
+        TerrainBlock tempTerrain = GetTerrain();
+        tempTerrain.transform.position = spawnPoint;
 
         spawnPoint.z += segment.length + SEGMENT_BUFFER;
         activeSegCount++;
-        segment.Spawn();
+        segment.Spawn(tempTerrain);
     }
 
     private void SpawnTransition()
@@ -78,10 +84,12 @@ public class SegmentGenerator : MonoBehaviour
         Segment segment = GetSegment(id, true);
 
         segment.transform.position = spawnPoint;
+        TerrainBlock tempTerrain = GetTerrain();
+        tempTerrain.transform.position = spawnPoint;
 
         spawnPoint.z += segment.length;
         activeSegCount++;
-        segment.Spawn();
+        segment.Spawn(tempTerrain);
     }
 
     private Segment GetSegment(int segmentId, bool transition)
@@ -114,5 +122,23 @@ public class SegmentGenerator : MonoBehaviour
         }
 
         return segment;
+    }
+
+    public TerrainBlock GetTerrain()
+    {
+        //reset for prototyping purposes
+        //in final game, race would end
+        GameObject go;
+        if(terrainCounter >= terrainList.Count - 1)
+        {
+            terrainCounter = 0;
+        }
+
+        go = terrainList[terrainCounter].gameObject;
+        go = Instantiate(go);
+        TerrainBlock terrainObj = go.GetComponent<TerrainBlock>();
+
+        terrainCounter++;
+        return terrainObj;
     }
 }
