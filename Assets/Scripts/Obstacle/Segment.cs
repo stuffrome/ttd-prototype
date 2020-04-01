@@ -15,16 +15,16 @@ public class Segment : MonoBehaviour
     private void Awake()
     {
         obstacles = gameObject.GetComponentsInChildren<Obstacle>();
-        //terrain = 
     }
 
-    public void Spawn(TerrainBlock t)
+    public void SpawnWith(TerrainBlock t)
     {
+        terrain = t;
+
         foreach (Obstacle obstacle in obstacles)
         {
             obstacle.Spawn();
         }
-        terrain = t;
         terrain.Spawn();
         gameObject.SetActive(true);
     }

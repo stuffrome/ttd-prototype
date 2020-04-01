@@ -5,15 +5,16 @@ using UnityEngine;
 public class SegmentGenerator : MonoBehaviour
 {
     private const int CONTINUOUS_SEGS_MAX = 5;
-    private const int START_BUFFER = 30;
-    private const int SEGMENT_BUFFER = 4;
+    private const int DEFAULT_SEGMENT_LENGTH = 10;
     private const int MAX_SPAWN_DISTANCE = 100;
     private const int DESPAWN_BUFFER = 20;
     private const int TERRAIN_LENGTH = 6;
+    private const int TRANSITION_COUNT = 10;
+
 
     private int activeSegCount;
     private int continuousSegCount;
-    private int terrainCounter;
+    private int spawnedSegsCount;
 
     private Vector3 spawnPoint;
 
@@ -26,7 +27,6 @@ public class SegmentGenerator : MonoBehaviour
 
     public void SetStartPosition(Vector3 startPosition) {
         spawnPoint = startPosition;
-        spawnPoint.z += START_BUFFER;
     }
 
     public void UpdateSegments(Vector3 playerPosition) {
@@ -41,24 +41,31 @@ public class SegmentGenerator : MonoBehaviour
     }
 
     public void DespawnSegmentsBehind(Vector3 playerPosition) {
-        foreach (Segment segment in activeSegs) {
-            if (segment.transform.position.z < playerPosition.z - DESPAWN_BUFFER) {
-                segment.Despawn();
-                activeSegs.Remove(segment);
+        for (int i = activeSegs.Count - 1; i >=0; i--)
+        {
+            if (activeSegs[i].transform.position.z < playerPosition.z - DESPAWN_BUFFER) {
+                activeSegs[i].Despawn();
+                activeSegs.RemoveAt(i);
             }
         }
     }
 
     private void GenerateSegment() {
-        if (continuousSegCount < CONTINUOUS_SEGS_MAX)
-        {
-            SpawnSegment();
-            continuousSegCount++;
+        if (spawnedSegsCount < 3) {
+            SpawnTransition();
         }
         else
         {
-            SpawnTransition();
-            continuousSegCount = 0;
+            if (continuousSegCount < CONTINUOUS_SEGS_MAX)
+            {
+                SpawnSegment();
+                continuousSegCount++;
+            }
+            else
+            {
+                SpawnTransition();
+                continuousSegCount = 0;
+            }
         }
     }
 
@@ -67,14 +74,15 @@ public class SegmentGenerator : MonoBehaviour
         int id = Random.Range(0, availableSegs.Count);
 
         Segment segment = GetSegment(id, false);
+        TerrainBlock terrain = GetTerrain();
 
         segment.transform.position = spawnPoint;
-        TerrainBlock tempTerrain = GetTerrain();
-        tempTerrain.transform.position = spawnPoint;
+        terrain.transform.position = spawnPoint;
 
-        spawnPoint.z += segment.length + SEGMENT_BUFFER;
+        spawnPoint.z += DEFAULT_SEGMENT_LENGTH;
         activeSegCount++;
-        segment.Spawn(tempTerrain);
+        spawnedSegsCount++;
+        segment.SpawnWith(terrain);
     }
 
     private void SpawnTransition()
@@ -89,7 +97,8 @@ public class SegmentGenerator : MonoBehaviour
 
         spawnPoint.z += segment.length;
         activeSegCount++;
-        segment.Spawn(tempTerrain);
+        spawnedSegsCount++;
+        segment.SpawnWith(tempTerrain);
     }
 
     private Segment GetSegment(int segmentId, bool transition)
@@ -129,16 +138,24 @@ public class SegmentGenerator : MonoBehaviour
         //reset for prototyping purposes
         //in final game, race would end
         GameObject go;
-        if(terrainCounter >= terrainList.Count - 1)
+        int terrainIndex = 0;
+        if(spawnedSegsCount < TRANSITION_COUNT)
         {
-            terrainCounter = 0;
+            terrainIndex = 0; // Forest
+        }
+        else if (spawnedSegsCount > TRANSITION_COUNT)
+        {
+            terrainIndex = 2; // Beach
+        }
+        else // == TRANSTITION_COUNT
+        {
+            terrainIndex = 1; // Transition block
         }
 
-        go = terrainList[terrainCounter].gameObject;
+        go = terrainList[terrainIndex].gameObject;
         go = Instantiate(go);
         TerrainBlock terrainObj = go.GetComponent<TerrainBlock>();
 
-        terrainCounter++;
         return terrainObj;
     }
 }
