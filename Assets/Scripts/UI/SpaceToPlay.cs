@@ -10,7 +10,7 @@ public class SpaceToPlay : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
 		{
-			SceneManager.LoadScene("TTD_InGameUI");
+			SceneManager.LoadScene("Game");
 		}
 	}
 }
