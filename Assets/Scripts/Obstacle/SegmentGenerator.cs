@@ -5,16 +5,20 @@ using UnityEngine;
 public class SegmentGenerator : MonoBehaviour
 {
     private const int CONTINUOUS_SEGS_MAX = 5;
-    private const int DEFAULT_SEGMENT_LENGTH = 10;
-    private const int MAX_SPAWN_DISTANCE = 100;
-    private const int DESPAWN_BUFFER = 20;
+    private const float DEFAULT_SEGMENT_LENGTH = 22.5f;
+    private const int MAX_SPAWN_DISTANCE = 130;
+    private const int DESPAWN_BUFFER = 30;
     private const int TERRAIN_LENGTH = 6;
-    private const int TRANSITION_COUNT = 10;
+    private const int MAX = 10;
 
 
     private int activeSegCount;
     private int continuousSegCount;
     private int spawnedSegsCount;
+
+    private int segSpawnLimit;
+    private int firstTransition;
+    private int secondTransition;
 
     private Vector3 spawnPoint;
 
@@ -25,12 +29,18 @@ public class SegmentGenerator : MonoBehaviour
     public List<TerrainBlock> terrainList = new List<TerrainBlock>();
 
 
-    public void SetStartPosition(Vector3 startPosition) {
+    public void Setup(Vector3 startPosition, int segmentCount) {
         spawnPoint = startPosition;
+        segSpawnLimit = segmentCount;
+        firstTransition = segmentCount / 3;
+        secondTransition = (segmentCount * 2) / 3;
     }
 
     public void UpdateSegments(Vector3 playerPosition) {
-        SpawnSegmentsAhead(playerPosition);
+        if (spawnedSegsCount < segSpawnLimit)
+        {
+            SpawnSegmentsAhead(playerPosition);
+        }
         DespawnSegmentsBehind(playerPosition);
     }
 
@@ -95,7 +105,7 @@ public class SegmentGenerator : MonoBehaviour
         TerrainBlock tempTerrain = GetTerrain();
         tempTerrain.transform.position = spawnPoint;
 
-        spawnPoint.z += segment.length;
+        spawnPoint.z += DEFAULT_SEGMENT_LENGTH;
         activeSegCount++;
         spawnedSegsCount++;
         segment.SpawnWith(tempTerrain);
@@ -135,21 +145,27 @@ public class SegmentGenerator : MonoBehaviour
 
     public TerrainBlock GetTerrain()
     {
-        //reset for prototyping purposes
-        //in final game, race would end
         GameObject go;
         int terrainIndex = 0;
-        if(spawnedSegsCount < TRANSITION_COUNT)
+        if(spawnedSegsCount < firstTransition)
         {
-            terrainIndex = 0; // Forest
+            terrainIndex = 0; // Volcano
         }
-        else if (spawnedSegsCount > TRANSITION_COUNT)
+        else if (spawnedSegsCount == firstTransition)
         {
-            terrainIndex = 2; // Beach
+            terrainIndex = 1; // Volcano to Jungle
         }
-        else // == TRANSTITION_COUNT
+        else if (spawnedSegsCount < secondTransition)
         {
-            terrainIndex = 1; // Transition block
+            terrainIndex = 2; // Jungle
+        }
+        else if (spawnedSegsCount == secondTransition)
+        {
+            terrainIndex = 3; // Jungle to Sand
+        }
+        else
+        {
+            terrainIndex = 4; // Sand
         }
 
         go = terrainList[terrainIndex].gameObject;

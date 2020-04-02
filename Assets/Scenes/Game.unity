@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.025
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
-  m_HaloStrength: 0.5
+  m_HaloStrength: 1
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -510,9 +510,11 @@ MonoBehaviour:
   availableTrans:
   - {fileID: 4026695189282479039, guid: f6d9b08ad39fb488a87dac4071732841, type: 3}
   terrainList:
-  - {fileID: 4659798357431223103, guid: 50acb4847641548d4a179ca90c11073b, type: 3}
-  - {fileID: 2779876885676801640, guid: 1556cb009d9404f2d909c17ef29f43fb, type: 3}
-  - {fileID: 8529552157868977976, guid: 50bce5e7767ac422b88dbedc74b45e68, type: 3}
+  - {fileID: 143855601008065247, guid: eaf4b38e59ce54e49beb00d2d1ea6249, type: 3}
+  - {fileID: 3396188274030887720, guid: bad1986bb67344e9dbf470f43ba75c5f, type: 3}
+  - {fileID: 3052793389947186556, guid: ce305141ca8ed483b96b3be7fb4c6dba, type: 3}
+  - {fileID: -5154805939673361866, guid: fdde5dafd3a7f4840ab31655559d2234, type: 3}
+  - {fileID: -4049886052546416472, guid: a87a69053b3d14362aada11e48b94844, type: 3}
 --- !u!4 &296542366
 Transform:
   m_ObjectHideFlags: 0
@@ -684,7 +686,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -959,7 +961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4076728699229854, guid: 86dce5937beb44f44859b8c9f8e6465c, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4076728699229854, guid: 86dce5937beb44f44859b8c9f8e6465c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1385,7 +1387,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1547,9 +1549,11 @@ MonoBehaviour:
   availableTrans:
   - {fileID: 4026695189282479039, guid: f6d9b08ad39fb488a87dac4071732841, type: 3}
   terrainList:
-  - {fileID: 4659798357431223103, guid: 50acb4847641548d4a179ca90c11073b, type: 3}
-  - {fileID: 2779876885676801640, guid: 1556cb009d9404f2d909c17ef29f43fb, type: 3}
-  - {fileID: 8529552157868977976, guid: 50bce5e7767ac422b88dbedc74b45e68, type: 3}
+  - {fileID: 143855601008065247, guid: eaf4b38e59ce54e49beb00d2d1ea6249, type: 3}
+  - {fileID: 3396188274030887720, guid: bad1986bb67344e9dbf470f43ba75c5f, type: 3}
+  - {fileID: 3052793389947186556, guid: ce305141ca8ed483b96b3be7fb4c6dba, type: 3}
+  - {fileID: -5154805939673361866, guid: fdde5dafd3a7f4840ab31655559d2234, type: 3}
+  - {fileID: -4049886052546416472, guid: a87a69053b3d14362aada11e48b94844, type: 3}
 --- !u!4 &1270950283
 Transform:
   m_ObjectHideFlags: 0
@@ -2011,7 +2015,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4076728699229854, guid: 86dce5937beb44f44859b8c9f8e6465c, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4076728699229854, guid: 86dce5937beb44f44859b8c9f8e6465c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

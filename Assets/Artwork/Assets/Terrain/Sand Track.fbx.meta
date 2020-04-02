@@ -3,22 +3,7 @@ guid: cc7734c2d71fa4daba7ee2cab2dfdfd8
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert3
-    second: {fileID: 2100000, guid: 1c326419d37e44aae81f0b7ea99815b1, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Sand
-    second: {fileID: 2800000, guid: f5e5b8d130825450e968b5daa5cf403d, type: 3}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: Sand Normal
-    second: {fileID: 2800000, guid: 8414f11f6214e44dbacae11641ffadb9, type: 3}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
