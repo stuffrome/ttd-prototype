@@ -1677,8 +1677,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   env1: {fileID: 910274533}
   env2: {fileID: 510419301}
+<<<<<<< HEAD
   p1Score: {fileID: 503316964}
   p2Score: {fileID: 571084268}
+=======
+  p1Score: {fileID: 244950664}
+  p2Score: {fileID: 1574571807}
+  p1Item: {fileID: 838250138}
+  p2Item: {fileID: 921758185}
+>>>>>>> 71e8295d17662f14df5f339dc5030a1489e92aea
 --- !u!4 &993527786
 Transform:
   m_ObjectHideFlags: 0
