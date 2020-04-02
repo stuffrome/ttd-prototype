@@ -7,30 +7,28 @@ public class Player : MonoBehaviour
     private const int TOKEN_MAX = 10;
     private const int TOKEN_LOSS_ON_HIT = 3;
 
-    private PlayerMovement movement;
-    [SerializeField]
-    private IItem item;
     [SerializeField]
     private int tokenCount;
+    private PlayerMovement movement;    
 
+    private Blessing blessing;
+    private Blessing emptyBlessing = new Blessing();
 
     void Start()
     {
+        tokenCount = 0;
         movement = gameObject.AddComponent(typeof(PlayerMovement)) as PlayerMovement;
 
-        // item = Item.None;
-        item = new IItem();
-        tokenCount = 0;
-    }
-
-    void Update()
-    {
-
+        blessing = emptyBlessing;
     }
 
     public int GetLane()
     {
         return movement.GetLane();
+    }
+
+    public int GetTokens(){
+        return tokenCount;
     }
 
     public void CollectToken()
@@ -55,14 +53,21 @@ public class Player : MonoBehaviour
         }
     }
 
-    public IItem CurrentItem()
+    //----------Blessings--------------
+    public Power GetPower()
     {
-        return item;
+        return blessing.GetPower();
     }
 
-    public void CollectItem(IItem newItem)
+    public void SetBlessing(Blessing newBlessing)
     {
-        item = newItem;
+        blessing = newBlessing;
+    }
+
+    public void UseBlessing(Player enemy)
+    {
+        blessing.UseBlessing(this, enemy);
+        blessing = emptyBlessing;
     }
 
     public void Hit()
@@ -71,7 +76,26 @@ public class Player : MonoBehaviour
         LoseTokens(TOKEN_LOSS_ON_HIT);
     }
 
-    public int GetTokens(){
-        return tokenCount;
+    public void Reverse()
+    {
+        movement.Reverse();
+    }
+
+    public void Thunder(Object obj){
+        GameObject spawned = (GameObject)Instantiate(obj);
+        ThunderMovement follow = spawned.GetComponent<ThunderMovement>();
+        follow.lookAt = transform;
+        Destroy(spawned, 5f);
+    }
+
+    public void Invincible(){
+        GetComponent<CharacterController>().detectCollisions = false;        
+        Debug.Log("Going phantom");
+        Invoke("Uninvincible", 5f);
+    }
+
+    private void Uninvincible(){
+        Debug.Log("Back to reality");
+        GetComponent<CharacterController>().detectCollisions = true;
     }
 }

@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float baseSpeed = 10f;
     private float speedMultiplier = 1.0f;
+    private bool isReverse = false;
 
     // Components
     private CharacterController controller;
@@ -55,7 +56,27 @@ public class PlayerMovement : MonoBehaviour
             InputAction? inputAction = inputDetector.DetectInput();
             if (inputAction.HasValue)
             {
+                if(isReverse){
+                    switch (inputAction.Value)
+                    {
+                        case InputAction.Left:
+                            inputAction = InputAction.Right;
+                        break;
 
+                        case InputAction.Right:
+                            inputAction = InputAction.Left;
+                        break;
+
+                        case InputAction.Up:
+                            inputAction = InputAction.Down;
+                        break;
+
+                        case InputAction.Down:
+                            inputAction = InputAction.Up;
+                        break;
+                    }
+                }
+                
                 switch (inputAction.Value)
                 {
                     case InputAction.Left:
@@ -144,5 +165,14 @@ public class PlayerMovement : MonoBehaviour
     public void Stumble()
     {
         animator.SetTrigger(Constants.animationSlide);
+    }
+
+    public void Reverse(){
+        isReverse = true;
+        Invoke("UnReverse", 5f);
+    }
+
+    public void UnReverse(){
+        isReverse = false;
     }
 }

@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
     void Update(){
         p1Score.text = env1.player.GetTokens().ToString("0");
         p2Score.text = env2.player.GetTokens().ToString("0");
-        p1Item.text = env1.player.CurrentItem().GetItem().ToString("");
-        p2Item.text = env2.player.CurrentItem().GetItem().ToString("");
+        p1Item.text = env1.player.GetPower().ToString("");
+        p2Item.text = env2.player.GetPower().ToString("");
     }
 
     public void Quit(){
