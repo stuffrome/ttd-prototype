@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 public class SpaceToPlay : MonoBehaviour
 {
     
-    void Update()
+    void Update() 
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)) // On the main menu, this function will load the in-game scene if the space bar s
 		{
 			SceneManager.LoadScene("Game");
 		}

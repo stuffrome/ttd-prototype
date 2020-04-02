@@ -5,10 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class ClickToLoad : MonoBehaviour
 {
-	public void LoadTutorial()
+	public void LoadTutorial_1()
 	{
-		SceneManager.LoadScene("TTD_Tutorial");
+		SceneManager.LoadScene("TTD_Tutorial1");
     }
+
+	public void LoadTutorial_2()
+	{
+		SceneManager.LoadScene("TTD_Tutorial2");
+	}
+
+	public void LoadTutorial_3()
+	{
+		SceneManager.LoadScene("TTD_Tutorial3");
+	}
 
 	public void LoadMenu()
 	{

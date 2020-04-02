@@ -9,9 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/TTD_StartScreen.unity
     guid: 60d91c3b5078e456fb26ec566ddaacdf
   - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 6409573260a02477cb65221a822125ba
+  - enabled: 1
     path: Assets/Scenes/TTD_Tutorial.unity
     guid: fa2ed2eedd42f4ef78fb874f00860aa4
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: 6409573260a02477cb65221a822125ba
+    path: Assets/Scenes/TTD_Tutorial1.unity
+    guid: 1a90cf68132353046a711debd7b8dcc3
+  - enabled: 1
+    path: Assets/Scenes/TTD_Tutorial2.unity
+    guid: b3318a6783fc54a0eb04d4980739bff0
+  - enabled: 1
+    path: Assets/Scenes/TTD_Tutorial3.unity
+    guid: 2363e61820f3a4ab084fb39784646738
   m_configObjects: {}
