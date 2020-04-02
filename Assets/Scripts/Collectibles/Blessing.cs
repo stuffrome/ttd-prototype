@@ -14,9 +14,7 @@ public enum Power
 public class Blessing {    
     protected Power power = Power.None;
 
-    public virtual void UseBlessing(Player owner, Player target){
-        owner.Invincible();
-    }
+    public virtual void UseBlessing(Player owner, Player target){}
 
     public Power GetPower(){
         return power;
@@ -30,6 +28,7 @@ public class Kick : Blessing
     }
     public override void UseBlessing(Player owner, Player target){
         target.Hit();
+        Debug.Log(power.ToString(""));
     }
 }
 
@@ -40,6 +39,7 @@ public class Reverse : Blessing
     }
     public override void UseBlessing(Player owner, Player target){
         target.Reverse();
+        Debug.Log(power.ToString(""));
     }
 }
 
@@ -50,6 +50,7 @@ public class Thunder : Blessing
     }
     public override void UseBlessing(Player owner, Player target){
         target.Thunder(Resources.Load("Sphere"));
+        Debug.Log(power.ToString(""));
     }
 }
 
@@ -60,6 +61,7 @@ public class Phantom : Blessing
     }
 
     public override void UseBlessing(Player owner, Player target){
-        owner.Invincible();
+        target.Invincible();
+        Debug.Log(power.ToString(""));
     }
 }

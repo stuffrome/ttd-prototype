@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 3906385226581647923}
   - component: {fileID: 6329791690659998265}
   - component: {fileID: 870668657700125964}
-  - component: {fileID: 1438774309441846841}
-  - component: {fileID: 1882204324570969916}
+  - component: {fileID: -6298304133198556156}
   m_Layer: 0
   m_Name: Token
   m_TagString: Untagged
@@ -95,7 +94,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &1438774309441846841
+--- !u!114 &-6298304133198556156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,18 +103,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 128091197613543870}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa9d3000a9a061c4295036beb6db314e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1882204324570969916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 128091197613543870}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64211340b8f277a40ada9916e1e61092, type: 3}
+  m_Script: {fileID: 11500000, guid: ab921fa28c031ca469bd3d0085098fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
