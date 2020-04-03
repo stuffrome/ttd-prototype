@@ -19,9 +19,9 @@ public class CollectBlessing : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         if(other.name == "Player"){
             Blessing blessing;
-            switch(Random.Range(0, 4)){
+            switch(Random.Range(0, 3)){
                 case 0: 
-                    blessing = new Kick();
+                    blessing = new Phantom();
                     break;
                 case 1:
                     blessing = new Thunder();
@@ -29,9 +29,9 @@ public class CollectBlessing : MonoBehaviour
                 case 2:
                     blessing = new Reverse();
                     break;
-                case 3:
-                    blessing = new Phantom();
-                    break;
+                // case 3:
+                //     blessing = new Kick();
+                //     break;
                 default:
                     blessing = new Blessing();
                     break;
