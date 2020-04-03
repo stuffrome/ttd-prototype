@@ -42,7 +42,7 @@ public class SegmentGenerator : MonoBehaviour
     }
 
     public void UpdateSegments(Vector3 playerPosition) {
-        if (spawnedSegsCount < segSpawnLimit)
+        if (spawnedSegsCount <= segSpawnLimit)
         {
             SpawnSegmentsAhead(playerPosition);
         }
@@ -170,10 +170,14 @@ public class SegmentGenerator : MonoBehaviour
         {
             go = transitionTerrains[1].gameObject; // Volcano to Jungle
         }
-        else
+        else if (spawnedSegsCount < segSpawnLimit)
         {
             terrainIndex = Random.Range(0, beachTerrains.Count); // Beach
             go = beachTerrains[terrainIndex].gameObject;
+        }
+        else
+        {
+            go = transitionTerrains[2].gameObject; // Finish line
         }
 
 

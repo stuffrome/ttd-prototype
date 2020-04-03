@@ -246,6 +246,7 @@ MonoBehaviour:
   transitionTerrains:
   - {fileID: 6473430382024438407, guid: a3524c2ac265e412f9ee8ed586152fb6, type: 3}
   - {fileID: 1700316353819355516, guid: d9acd15b446b34f3bac462370cf7db4e, type: 3}
+  - {fileID: 7398067862025692300, guid: 6eae9451a459e4924b342005ff917872, type: 3}
   volcanoTerrains:
   - {fileID: 1376689114808460578, guid: fb589628e26c546558fabb3e312e86ff, type: 3}
   - {fileID: 6620111509770780104, guid: 75eae45e562ba4028995da8072e7a6b7, type: 3}
@@ -987,6 +988,7 @@ MonoBehaviour:
   transitionTerrains:
   - {fileID: 6473430382024438407, guid: a3524c2ac265e412f9ee8ed586152fb6, type: 3}
   - {fileID: 1700316353819355516, guid: d9acd15b446b34f3bac462370cf7db4e, type: 3}
+  - {fileID: 7398067862025692300, guid: 6eae9451a459e4924b342005ff917872, type: 3}
   volcanoTerrains:
   - {fileID: 1376689114808460578, guid: fb589628e26c546558fabb3e312e86ff, type: 3}
   - {fileID: 6620111509770780104, guid: 75eae45e562ba4028995da8072e7a6b7, type: 3}
