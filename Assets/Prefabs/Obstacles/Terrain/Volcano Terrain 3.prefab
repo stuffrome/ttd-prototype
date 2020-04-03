@@ -283,6 +283,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LavaTerr3
       objectReference: {fileID: 0}
+    - target: {fileID: 6719543670972648472, guid: c9f956f64078347969348d5959eea4ad,
+        type: 3}
+      propertyPath: m_Name
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 6720233606051664370, guid: c9f956f64078347969348d5959eea4ad,
         type: 3}
       propertyPath: m_LocalPosition.x

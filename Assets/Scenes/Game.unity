@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44659364, g: 0.4964301, b: 0.5748256, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -500,13 +500,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableSegs:
-  - {fileID: 3813250038797903081, guid: 979e47b81346a4a6586f82ce6c901020, type: 3}
-  - {fileID: 1028854701213350550, guid: 67600f7ba036f4493b43f17588d67549, type: 3}
-  - {fileID: 1284468672629277798, guid: eff9cdd3bc09645e18e71fbee31a3c7b, type: 3}
-  - {fileID: 8730801951616156432, guid: 3c3ae227a220e4b89ab1ab7e202cc57b, type: 3}
-  - {fileID: 2329248950588231924, guid: cdfb7d199f2c84044951f6ac447da3b6, type: 3}
-  - {fileID: 3368525573899030000, guid: f712b1b993edf451f9781edd9c1666e4, type: 3}
-  - {fileID: 6033008716457515628, guid: 50352343d2c3b4169a46420e51793c5b, type: 3}
+  - {fileID: 741988418697925500, guid: aa5d0d591fea64f47b30c79eaf2a98db, type: 3}
+  - {fileID: 6205358046803054543, guid: d00a0a784b2154d77905024c697967c9, type: 3}
+  - {fileID: 6062550443627032181, guid: c83f90d8dd38a4dff90cbdfc1202c0dd, type: 3}
   availableTrans:
   - {fileID: 4026695189282479039, guid: f6d9b08ad39fb488a87dac4071732841, type: 3}
   transitionTerrains:
@@ -697,7 +693,7 @@ Camera:
   m_GameObject: {fileID: 477910119}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -818,7 +814,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510419299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20, y: 0, z: 0}
+  m_LocalPosition: {x: 200, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 296542366}
@@ -1398,7 +1394,7 @@ Camera:
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1551,13 +1547,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableSegs:
-  - {fileID: 3813250038797903081, guid: 979e47b81346a4a6586f82ce6c901020, type: 3}
-  - {fileID: 1028854701213350550, guid: 67600f7ba036f4493b43f17588d67549, type: 3}
-  - {fileID: 1284468672629277798, guid: eff9cdd3bc09645e18e71fbee31a3c7b, type: 3}
-  - {fileID: 8730801951616156432, guid: 3c3ae227a220e4b89ab1ab7e202cc57b, type: 3}
-  - {fileID: 2329248950588231924, guid: cdfb7d199f2c84044951f6ac447da3b6, type: 3}
-  - {fileID: 3368525573899030000, guid: f712b1b993edf451f9781edd9c1666e4, type: 3}
-  - {fileID: 6033008716457515628, guid: 50352343d2c3b4169a46420e51793c5b, type: 3}
+  - {fileID: 741988418697925500, guid: aa5d0d591fea64f47b30c79eaf2a98db, type: 3}
+  - {fileID: 6205358046803054543, guid: d00a0a784b2154d77905024c697967c9, type: 3}
+  - {fileID: 6062550443627032181, guid: c83f90d8dd38a4dff90cbdfc1202c0dd, type: 3}
   availableTrans:
   - {fileID: 4026695189282479039, guid: f6d9b08ad39fb488a87dac4071732841, type: 3}
   - {fileID: 4026695189282479039, guid: f6d9b08ad39fb488a87dac4071732841, type: 3}
@@ -2425,7 +2417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1942693919
 Transform:
   m_ObjectHideFlags: 0
@@ -2461,7 +2453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2091568440
 MonoBehaviour:
   m_ObjectHideFlags: 0

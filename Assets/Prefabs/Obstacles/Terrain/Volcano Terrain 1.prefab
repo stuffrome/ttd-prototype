@@ -318,6 +318,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.81116
       objectReference: {fileID: 0}
+    - target: {fileID: 1421288114568987930, guid: b66e0cbf4538f4f168ec8ada2a6d1417,
+        type: 3}
+      propertyPath: m_Name
+      value: Rock
+      objectReference: {fileID: 0}
     - target: {fileID: 1421698784432374589, guid: b66e0cbf4538f4f168ec8ada2a6d1417,
         type: 3}
       propertyPath: m_LocalPosition.x
