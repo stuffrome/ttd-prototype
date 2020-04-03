@@ -1,6 +1,6 @@
 # Tiki Temple Dude [BETA]
 
-More like Icy Igloo Penguin, but hey... it's an alpha build.
+More like Tiki Temple Penguin, but hey... it's still a beta build.
 
 ## Controls
 
@@ -17,7 +17,10 @@ Player 2
 Coins:
  - Affect player speed. Capped at 10.
 
-Items:
- - Kick
- -- Opponent must be on the opposite lane for item to work.
- -- Removes coins from opponent.
+Items (Gems):
+ - Reverse
+ -- Flip controls of the opponent for 5 seconds. Up is down, left is right, etc.
+ - Phantom
+ -- Make opponent incapable of collecting coins or power-ups for 5 seconds.
+ - Thunder
+ -- Spawn thundercloud on opponents lane which will strike after 3 seconds, causing them to fall and lose 3 coins.
