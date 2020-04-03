@@ -10,17 +10,22 @@ public class Segment : MonoBehaviour
 
     private Obstacle[] obstacles;
 
+    private TerrainBlock terrain;
+
     private void Awake()
     {
         obstacles = gameObject.GetComponentsInChildren<Obstacle>();
     }
 
-    public void Spawn()
+    public void SpawnWith(TerrainBlock t)
     {
+        terrain = t;
+
         foreach (Obstacle obstacle in obstacles)
         {
             obstacle.Spawn();
         }
+        terrain.Spawn();
         gameObject.SetActive(true);
     }
 
@@ -30,6 +35,7 @@ public class Segment : MonoBehaviour
         {
             obstacle.Despawn();
         }
+        terrain.DeSpawn();
         gameObject.SetActive(false);
     }
 }
