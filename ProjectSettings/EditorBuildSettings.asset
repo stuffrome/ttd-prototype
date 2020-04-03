@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/TTD_StartScreen.unity
+    guid: 60d91c3b5078e456fb26ec566ddaacdf
+  - enabled: 1
+    path: Assets/Scenes/TTD_Tutorial1.unity
+    guid: 1a90cf68132353046a711debd7b8dcc3
+  - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 6409573260a02477cb65221a822125ba
   m_configObjects: {}

@@ -49,7 +49,7 @@ public class Thunder : Blessing
         power = Power.Thunder;
     }
     public override void UseBlessing(Player owner, Player target){
-        target.Thunder(Resources.Load("Thunder"));
+        target.Thunder(Resources.Load("Thunder"), target.GetLane());
         Debug.Log(power.ToString(""));
     }
 }
