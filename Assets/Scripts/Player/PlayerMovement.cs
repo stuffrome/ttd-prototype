@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
                         break;
                     }
                 }
-                
+
                 switch (inputAction.Value)
                 {
                     case InputAction.Left:
@@ -174,5 +174,18 @@ public class PlayerMovement : MonoBehaviour
 
     public void UnReverse(){
         isReverse = false;
+    }
+
+    public void Stop()
+    {
+        speedMultiplier = 0f;
+    }
+
+    public void Go()
+    {
+        if (speedMultiplier == 0f)
+        {
+            speedMultiplier = 1f;
+        }
     }
 }

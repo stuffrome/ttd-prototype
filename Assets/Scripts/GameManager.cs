@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
 
     private void updateItem(GameObject[] UI, Power power){
         switch(power){
-            case Power.Reverse : 
+            case Power.Reverse :
                 toggleUI(UI, 2);
                 break;
             case Power.Thunder :

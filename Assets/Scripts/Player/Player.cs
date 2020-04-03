@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private int tokenCount;
-    private PlayerMovement movement;    
+    private PlayerMovement movement;
 
     private Blessing blessing;
     private Blessing emptyBlessing = new Blessing();
@@ -81,11 +81,23 @@ public class Player : MonoBehaviour
         movement.Reverse();
     }
 
+    public void SetMoving(bool moving)
+    {
+        if (moving)
+        {
+            movement.Go();
+        }
+        else
+        {
+            movement.Stop();
+        }
+    }
+
     public void Thunder(Object obj, int targetLane){
         GameObject spawned = (GameObject)Instantiate(obj);
         ThunderMovement follow = spawned.GetComponent<ThunderMovement>();
         follow.lookAt = transform;
-        StartCoroutine(Thunderstrike(targetLane));        
+        StartCoroutine(Thunderstrike(targetLane));
         Destroy(spawned, 5f);
     }
 
@@ -95,7 +107,7 @@ public class Player : MonoBehaviour
     }
 
     public void Invincible(){
-        GetComponent<CharacterController>().detectCollisions = false;        
+        GetComponent<CharacterController>().detectCollisions = false;
         Debug.Log("Going phantom");
         Invoke("Uninvincible", 5f);
     }

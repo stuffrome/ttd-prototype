@@ -179,7 +179,11 @@ public class SegmentGenerator : MonoBehaviour
         else
         {
             go = endTerrain.gameObject; // Finish line
-            return go.GetComponent<TerrainBlock>();
+
+            if (go != null)
+            {
+                return go.GetComponent<TerrainBlock>();
+            }
         }
 
 
