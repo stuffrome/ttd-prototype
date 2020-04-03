@@ -27,7 +27,8 @@ public class ItemMechanics : MonoBehaviour
 
     private void DetermineInteraction(Player player){
         if(GetInput(player).HasValue && GetInput(player).Value == InputAction.Item){
-            if(GetLane(player) == GetEnemyLane(player)){HitEnemy(player);}
+            // if(GetLane(player) == GetEnemyLane(player)){HitEnemy(player);}
+            UseItem(player);
         }
     }
 
@@ -46,10 +47,15 @@ public class ItemMechanics : MonoBehaviour
         if(player == Player.P2){return -1*env1.player.GetLane();}
         return null;
     }
-    private void HitEnemy(Player player){
-        if(player == Player.P1){env2.player.Hit();}
-        else if(player == Player.P2){env1.player.Hit();}
+    private void UseItem(Player player){
+        if(player == Player.P1){env1.player.UseBlessing(env2.player);}
+        else if(player == Player.P2){env2.player.UseBlessing(env1.player);}
     }
+    
+    // private void HitEnemy(Player player){
+    //     if(player == Player.P1){env2.player.Hit();}
+    //     else if(player == Player.P2){env1.player.Hit();}
+    // }
 }
     
     // [SerializeField]
