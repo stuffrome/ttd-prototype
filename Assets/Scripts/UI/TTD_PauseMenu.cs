@@ -16,9 +16,11 @@ public class TTD_PauseMenu : MonoBehaviour
 		{
             if (gameIsPaused)
 			{
+				pauseMenu.SetActive(false);
 				resumeGame();
 			} else
 			{
+				pauseMenu.SetActive(true);
 				pauseGame();
 			}
 		}
@@ -26,14 +28,12 @@ public class TTD_PauseMenu : MonoBehaviour
 
 	public void resumeGame() // Function called if the game is paused. Turns off pause menu, turns time back on.
 	{
-		pauseMenu.SetActive(false);
 		Time.timeScale = 1f;
 		gameIsPaused = false;
 	}
 
 	public void pauseGame() // Function called if the game is on. Turns on pause menu, turns time off.
 	{
-		pauseMenu.SetActive(true);
 		Time.timeScale = 0f;
 		gameIsPaused = true;
 	}

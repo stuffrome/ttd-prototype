@@ -30,6 +30,7 @@ public class SegmentGenerator : MonoBehaviour
     public List<TerrainBlock> volcanoTerrains = new List<TerrainBlock>();
     public List<TerrainBlock> jungleTerrains = new List<TerrainBlock>();
     public List<TerrainBlock> beachTerrains = new List<TerrainBlock>();
+    public TerrainBlock endTerrain;
 
 
 
@@ -177,7 +178,8 @@ public class SegmentGenerator : MonoBehaviour
         }
         else
         {
-            go = transitionTerrains[2].gameObject; // Finish line
+            go = endTerrain.gameObject; // Finish line
+            return go.GetComponent<TerrainBlock>();
         }
 
 
