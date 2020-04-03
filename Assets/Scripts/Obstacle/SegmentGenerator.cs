@@ -26,7 +26,12 @@ public class SegmentGenerator : MonoBehaviour
     public List<Segment> availableTrans = new List<Segment>();
     private List<Segment> activeSegs = new List<Segment>();
 
-    public List<TerrainBlock> terrainList = new List<TerrainBlock>();
+    public List<TerrainBlock> transitionTerrains = new List<TerrainBlock>();
+    public List<TerrainBlock> volcanoTerrains = new List<TerrainBlock>();
+    public List<TerrainBlock> jungleTerrains = new List<TerrainBlock>();
+    public List<TerrainBlock> beachTerrains = new List<TerrainBlock>();
+
+
 
 
     public void Setup(Vector3 startPosition, int segmentCount) {
@@ -149,26 +154,29 @@ public class SegmentGenerator : MonoBehaviour
         int terrainIndex = 0;
         if(spawnedSegsCount < firstTransition)
         {
-            terrainIndex = 0; // Volcano
+            terrainIndex = Random.Range(0, volcanoTerrains.Count); // Volcano
+            go = volcanoTerrains[terrainIndex].gameObject;
         }
         else if (spawnedSegsCount == firstTransition)
-        {
-            terrainIndex = 1; // Volcano to Jungle
+        { 
+            go = transitionTerrains[0].gameObject; // Volcano to Jungle
         }
         else if (spawnedSegsCount < secondTransition)
         {
-            terrainIndex = 2; // Jungle
+            terrainIndex = Random.Range(0, jungleTerrains.Count); // Jungle
+            go = jungleTerrains[terrainIndex].gameObject;
         }
         else if (spawnedSegsCount == secondTransition)
         {
-            terrainIndex = 3; // Jungle to Sand
+            go = transitionTerrains[1].gameObject; // Volcano to Jungle
         }
         else
         {
-            terrainIndex = 4; // Sand
+            terrainIndex = Random.Range(0, beachTerrains.Count); // Beach
+            go = beachTerrains[terrainIndex].gameObject;
         }
 
-        go = terrainList[terrainIndex].gameObject;
+        
         go = Instantiate(go);
         TerrainBlock terrainObj = go.GetComponent<TerrainBlock>();
 

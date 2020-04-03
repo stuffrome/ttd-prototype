@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44659364, g: 0.4964301, b: 0.5748256, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -509,12 +509,24 @@ MonoBehaviour:
   - {fileID: 6033008716457515628, guid: 50352343d2c3b4169a46420e51793c5b, type: 3}
   availableTrans:
   - {fileID: 4026695189282479039, guid: f6d9b08ad39fb488a87dac4071732841, type: 3}
-  terrainList:
-  - {fileID: 143855601008065247, guid: eaf4b38e59ce54e49beb00d2d1ea6249, type: 3}
-  - {fileID: 3396188274030887720, guid: bad1986bb67344e9dbf470f43ba75c5f, type: 3}
-  - {fileID: 3052793389947186556, guid: ce305141ca8ed483b96b3be7fb4c6dba, type: 3}
-  - {fileID: -5154805939673361866, guid: fdde5dafd3a7f4840ab31655559d2234, type: 3}
-  - {fileID: -4049886052546416472, guid: a87a69053b3d14362aada11e48b94844, type: 3}
+  transitionTerrains:
+  - {fileID: 6473430382024438407, guid: a3524c2ac265e412f9ee8ed586152fb6, type: 3}
+  - {fileID: 1700316353819355516, guid: d9acd15b446b34f3bac462370cf7db4e, type: 3}
+  volcanoTerrains:
+  - {fileID: 1376689114808460578, guid: fb589628e26c546558fabb3e312e86ff, type: 3}
+  - {fileID: 6620111509770780104, guid: 75eae45e562ba4028995da8072e7a6b7, type: 3}
+  - {fileID: 824434289367104596, guid: 473e5690b584e4cc887925378b206786, type: 3}
+  - {fileID: 1795195855364153408, guid: 537e9534764e44587b9060fa4fbfda8f, type: 3}
+  jungleTerrains:
+  - {fileID: 1776832284115832854, guid: c5754c90f58574ce0aefb5f48c427e7b, type: 3}
+  - {fileID: 3911000391593880958, guid: c79a31742fca941d99dc53cbf0d23406, type: 3}
+  - {fileID: 5150711240876487793, guid: c36862e644a0f4f7bb3a2c5b69d195ea, type: 3}
+  - {fileID: 5239405925747014401, guid: 667c24aba041a4b54acd0a527f8db667, type: 3}
+  beachTerrains:
+  - {fileID: 7385457014249918065, guid: de62e7ec8bd0b49e2b3db338a28a236f, type: 3}
+  - {fileID: 1733002467024734055, guid: 411e49561e41f4898a868120d395494a, type: 3}
+  - {fileID: 6141531747319392996, guid: 7501bacd7ffc842ccba4740126a49ac0, type: 3}
+  - {fileID: 6313406531888475783, guid: b1c934ef532be4d85a1b50083956ab3c, type: 3}
 --- !u!4 &296542366
 Transform:
   m_ObjectHideFlags: 0
@@ -1548,12 +1560,25 @@ MonoBehaviour:
   - {fileID: 6033008716457515628, guid: 50352343d2c3b4169a46420e51793c5b, type: 3}
   availableTrans:
   - {fileID: 4026695189282479039, guid: f6d9b08ad39fb488a87dac4071732841, type: 3}
-  terrainList:
-  - {fileID: 143855601008065247, guid: eaf4b38e59ce54e49beb00d2d1ea6249, type: 3}
-  - {fileID: 3396188274030887720, guid: bad1986bb67344e9dbf470f43ba75c5f, type: 3}
-  - {fileID: 3052793389947186556, guid: ce305141ca8ed483b96b3be7fb4c6dba, type: 3}
-  - {fileID: -5154805939673361866, guid: fdde5dafd3a7f4840ab31655559d2234, type: 3}
-  - {fileID: -4049886052546416472, guid: a87a69053b3d14362aada11e48b94844, type: 3}
+  - {fileID: 4026695189282479039, guid: f6d9b08ad39fb488a87dac4071732841, type: 3}
+  transitionTerrains:
+  - {fileID: 6473430382024438407, guid: a3524c2ac265e412f9ee8ed586152fb6, type: 3}
+  - {fileID: 1700316353819355516, guid: d9acd15b446b34f3bac462370cf7db4e, type: 3}
+  volcanoTerrains:
+  - {fileID: 1376689114808460578, guid: fb589628e26c546558fabb3e312e86ff, type: 3}
+  - {fileID: 6620111509770780104, guid: 75eae45e562ba4028995da8072e7a6b7, type: 3}
+  - {fileID: 824434289367104596, guid: 473e5690b584e4cc887925378b206786, type: 3}
+  - {fileID: 1795195855364153408, guid: 537e9534764e44587b9060fa4fbfda8f, type: 3}
+  jungleTerrains:
+  - {fileID: 1776832284115832854, guid: c5754c90f58574ce0aefb5f48c427e7b, type: 3}
+  - {fileID: 3911000391593880958, guid: c79a31742fca941d99dc53cbf0d23406, type: 3}
+  - {fileID: 5150711240876487793, guid: c36862e644a0f4f7bb3a2c5b69d195ea, type: 3}
+  - {fileID: 5239405925747014401, guid: 667c24aba041a4b54acd0a527f8db667, type: 3}
+  beachTerrains:
+  - {fileID: 7385457014249918065, guid: de62e7ec8bd0b49e2b3db338a28a236f, type: 3}
+  - {fileID: 1733002467024734055, guid: 411e49561e41f4898a868120d395494a, type: 3}
+  - {fileID: 6141531747319392996, guid: 7501bacd7ffc842ccba4740126a49ac0, type: 3}
+  - {fileID: 6313406531888475783, guid: b1c934ef532be4d85a1b50083956ab3c, type: 3}
 --- !u!4 &1270950283
 Transform:
   m_ObjectHideFlags: 0
