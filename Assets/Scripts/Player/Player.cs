@@ -81,11 +81,17 @@ public class Player : MonoBehaviour
         movement.Reverse();
     }
 
-    public void Thunder(Object obj){
+    public void Thunder(Object obj, int targetLane){
         GameObject spawned = (GameObject)Instantiate(obj);
         ThunderMovement follow = spawned.GetComponent<ThunderMovement>();
         follow.lookAt = transform;
+        StartCoroutine(Thunderstrike(targetLane));        
         Destroy(spawned, 5f);
+    }
+
+    private IEnumerator Thunderstrike(int targetLane){
+        yield return new WaitForSeconds(3f);
+        if(GetLane() == targetLane) Hit();
     }
 
     public void Invincible(){
