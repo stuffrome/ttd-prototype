@@ -8,7 +8,7 @@ public enum Power
     Thunder,
     Reverse,
     Kick,
-    Phantom
+    Phantm
 }
 
 public class Blessing {    
@@ -28,7 +28,6 @@ public class Kick : Blessing
     }
     public override void UseBlessing(Player owner, Player target){
         target.Hit();
-        Debug.Log(power.ToString(""));
     }
 }
 
@@ -39,7 +38,6 @@ public class Reverse : Blessing
     }
     public override void UseBlessing(Player owner, Player target){
         target.Reverse();
-        Debug.Log(power.ToString(""));
     }
 }
 
@@ -49,19 +47,17 @@ public class Thunder : Blessing
         power = Power.Thunder;
     }
     public override void UseBlessing(Player owner, Player target){
-        target.Thunder(Resources.Load("Thunder"), target.GetLane());
-        Debug.Log(power.ToString(""));
+        target.Thunder(target.GetLane());
     }
 }
 
-public class Phantom : Blessing
+public class Phantm : Blessing
 {
-    public Phantom(){
-        power = Power.Phantom;
+    public Phantm(){
+        power = Power.Phantm;
     }
 
     public override void UseBlessing(Player owner, Player target){
-        target.Invincible();
-        Debug.Log(power.ToString(""));
+        target.Phantm();
     }
 }

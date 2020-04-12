@@ -93,12 +93,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Thunder(Object obj, int targetLane){
-        GameObject spawned = (GameObject)Instantiate(obj);
-        ThunderMovement follow = spawned.GetComponent<ThunderMovement>();
-        follow.lookAt = transform;
+    public void Thunder(int targetLane){
+        GameObject cloud = (GameObject)Instantiate(Resources.Load("Thunder"));
+        cloud.GetComponent<ThunderMovement>().lookAt = transform;
         StartCoroutine(Thunderstrike(targetLane));
-        Destroy(spawned, 5f);
+        Destroy(cloud, 5f);
     }
 
     private IEnumerator Thunderstrike(int targetLane){
@@ -106,14 +105,20 @@ public class Player : MonoBehaviour
         if(GetLane() == targetLane) Hit();
     }
 
-    public void Invincible(){
-        GetComponent<CharacterController>().detectCollisions = false;
-        Debug.Log("Going phantom");
-        Invoke("Uninvincible", 5f);
+    public void Phantm(){
+        CharacterController controller = GetComponent<CharacterController>();
+        controller.detectCollisions = false;
+
+        Renderer renderer = transform.GetChild(2).GetComponent<Renderer>();
+        Color initColor = renderer.material.color;
+        renderer.material.color = new Color(initColor.r, initColor.g, initColor.b, 0f);
+
+        StartCoroutine(Nophantm(controller, renderer, initColor));
     }
 
-    private void Uninvincible(){
-        Debug.Log("Back to reality");
-        GetComponent<CharacterController>().detectCollisions = true;
+    private IEnumerator Nophantm(CharacterController controller, Renderer renderer, Color initColor){
+        yield return new WaitForSeconds(5f);
+        controller.detectCollisions = true;
+        renderer.material.color = initColor;
     }
 }

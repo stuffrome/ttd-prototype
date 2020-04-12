@@ -21,7 +21,7 @@ public class CollectBlessing : MonoBehaviour
             Blessing blessing;
             switch(Random.Range(0, 3)){
                 case 0: 
-                    blessing = new Phantom();
+                    blessing = new Phantm();
                     break;
                 case 1:
                     blessing = new Thunder();

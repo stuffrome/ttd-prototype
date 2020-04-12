@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
             case Power.Thunder :
                 toggleUI(UI, 1);
                 break;
-            case Power.Phantom :
+            case Power.Phantm :
                 toggleUI(UI, 0);
                 break;
             default :
