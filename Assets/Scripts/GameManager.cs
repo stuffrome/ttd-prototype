@@ -1,19 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public Environment env1, env2;
     public TextMeshProUGUI p1Score, p2Score;
+    public Slider p1Progress, p2Progress;
     public GameObject[] p1Item, p2Item;
 
     void Update(){
         p1Score.text = env1.player.GetTokens().ToString("0");
         p2Score.text = env2.player.GetTokens().ToString("0");
+        p1Progress.value = env1.GetPlayerProgress();
+        p2Progress.value = env2.GetPlayerProgress();
         updateItem(p1Item, env1.player.GetPower());
-        updateItem(p2Item, env2.player.GetPower());
+        updateItem(p2Item, env2.player.GetPower());        
     }
 
     private void updateItem(GameObject[] UI, Power power){

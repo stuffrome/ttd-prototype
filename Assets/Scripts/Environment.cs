@@ -44,4 +44,8 @@ public class Environment : MonoBehaviour
 
         return playerGO;
     }
+
+    public float GetPlayerProgress(){
+        return segmentGenerator.GetSegmentProgress();
+    }
 }

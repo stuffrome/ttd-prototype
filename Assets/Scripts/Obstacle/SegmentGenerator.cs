@@ -192,4 +192,8 @@ public class SegmentGenerator : MonoBehaviour
 
         return terrainObj;
     }
+
+    public float GetSegmentProgress(){        
+        return ((float)spawnedSegsCount)/segSpawnLimit;
+    }
 }
