@@ -311,7 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookAt: {fileID: 0}
-  positionOffset: {x: 0, y: -1.5, z: 3}
+  positionOffset: {x: 0, y: -1.5, z: 0}
   rotation: {x: 0, y: -90, z: 0}
 --- !u!1 &7448172679180155444
 GameObject:

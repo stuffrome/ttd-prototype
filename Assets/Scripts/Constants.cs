@@ -19,5 +19,5 @@ public static class Constants
     //Offsets
     public static readonly Vector3 cameraPosition = new Vector3(0f, 2.18f, -3f);
     public static readonly Vector3 cameraRotation = new Vector3(17.29f, 0f, 0f);
-    public static readonly Vector3 blessingPosition = new Vector3(0f, 2.18f, 3f);
+    public static readonly Vector3 blessingPosition = new Vector3(0f, 2.18f, 0f);
 }
