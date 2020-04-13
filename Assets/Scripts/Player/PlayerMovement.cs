@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float gravity = 12f;
     [SerializeField]
-    private float baseSpeed = 10f;
+    private float baseSpeed = 8.5f;
     private float speedMultiplier = 1.0f;
     private bool isReverse = false;
 
@@ -105,6 +105,53 @@ public class PlayerMovement : MonoBehaviour
         {
             verticalVelocity -= gravity * Time.deltaTime;
             animator.SetBool(Constants.animationGrounded, false);
+
+            InputAction? inputAction = inputDetector.DetectInput();
+            if (inputAction.HasValue)
+            {
+                if(isReverse){
+                    switch (inputAction.Value)
+                    {
+                        case InputAction.Left:
+                            inputAction = InputAction.Right;
+                        break;
+
+                        case InputAction.Right:
+                            inputAction = InputAction.Left;
+                        break;
+
+                        case InputAction.Up:
+                            // No double jump
+                        break;
+
+                        case InputAction.Down:
+                            inputAction = InputAction.Up;
+                        break;
+                    }
+                }
+
+                switch (inputAction.Value)
+                {
+                    case InputAction.Left:
+                        laneTracker.MoveLeft();
+                    break;
+
+                    case InputAction.Right:
+                        laneTracker.MoveRight();
+                    break;
+
+                    case InputAction.Up:
+                        // No double jump
+                    break;
+
+                    case InputAction.Down:
+                        animator.SetTrigger(Constants.animationSlide);
+                    break;
+
+                    default:
+                    break;
+                }
+            }
         }
     }
 
