@@ -12,9 +12,9 @@ public class PlayerMovement : MonoBehaviour
     // These fields are serialized for testing.
     // NOTE: Serialization can be removed for prod
     [SerializeField]
-    private float jump = 5f;
+    private float jump = 10f;
     [SerializeField]
-    private float gravity = 12f;
+    private float gravity = 38f;
     [SerializeField]
     private float baseSpeed = 8.5f;
     private float speedMultiplier = 1.0f;
@@ -145,6 +145,7 @@ public class PlayerMovement : MonoBehaviour
                     break;
 
                     case InputAction.Down:
+                        // verticalVelocity *= 2;
                         animator.SetTrigger(Constants.animationSlide);
                     break;
 
