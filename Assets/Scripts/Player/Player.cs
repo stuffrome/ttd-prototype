@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
             tokenCount++;
         }
 
-        movement.SetSpeedMultiplier(1.0f + (float)tokenCount/10f);
+        movement.SetSpeedMultiplier(1.0f + (float)tokenCount/20f);
     }
 
     private void LoseTokens(int count)
