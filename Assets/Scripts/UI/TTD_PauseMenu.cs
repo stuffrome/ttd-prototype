@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class TTD_PauseMenu : MonoBehaviour
 {
 	public static bool gameIsPaused = false;
+	public static bool gameIsRunning = true;
 	public GameObject pauseMenu;
 	AudioSource audioSource;
 
@@ -14,12 +15,14 @@ public class TTD_PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P)) // Press ESC or P keys to Pause Game
 		{
-            if (gameIsPaused)
-			{
-				resumeGame();
-			} else
-			{
-				pauseGame();
+			if (gameIsRunning) {
+				if (gameIsPaused)
+				{
+					resumeGame();
+				} else
+				{
+					pauseGame();
+				}
 			}
 		}
     }
