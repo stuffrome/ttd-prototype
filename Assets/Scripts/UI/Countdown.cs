@@ -54,6 +54,7 @@ public class Countdown : MonoBehaviour
         {
             countText1.gameObject.SetActive(false);
             countText2.gameObject.SetActive(false);
+            Destroy(this);
         }
 
     }
