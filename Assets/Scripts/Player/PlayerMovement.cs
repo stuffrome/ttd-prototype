@@ -224,16 +224,20 @@ public class PlayerMovement : MonoBehaviour
         isReverse = false;
     }
 
-    public void Stop()
+    public void SetMoving(bool moving)
     {
-        speedMultiplier = 0f;
-    }
-
-    public void Go()
-    {
-        if (speedMultiplier == 0f)
+        if (moving)
         {
-            speedMultiplier = 1f;
+            animator.SetBool(Constants.animationRunning, true);
+            if (speedMultiplier == 0f)
+            {
+                speedMultiplier = 1f;
+            }
+        }
+        else
+        {
+            animator.SetBool(Constants.animationRunning, false);
+            speedMultiplier = 0f;
         }
     }
 }
