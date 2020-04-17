@@ -12,6 +12,8 @@ public class FinishLine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        TTD_PauseMenu.gameIsRunning = false;
+
         TextMeshProUGUI textComponent = GetText();
         if (textComponent != null)
         {
