@@ -7,9 +7,9 @@ public class Player : MonoBehaviour
     private const int TOKEN_MAX = 10;
     private const int TOKEN_LOSS_ON_HIT = 3;
 
-    [SerializeField]
     private int tokenCount;
     private PlayerMovement movement;
+    private bool moving;
 
     private Blessing blessing;
     private Blessing emptyBlessing = new Blessing();
@@ -83,13 +83,10 @@ public class Player : MonoBehaviour
 
     public void SetMoving(bool moving)
     {
-        if (moving)
+        if (!this.moving)
         {
-            movement.Go();
-        }
-        else
-        {
-            movement.Stop();
+            this.moving = moving;
+            movement.SetMoving(moving);
         }
     }
 

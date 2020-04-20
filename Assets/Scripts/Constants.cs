@@ -8,6 +8,7 @@ public static class Constants
     public static readonly string animationJump = "Jump";
     public static readonly string animationSlide = "Slide";
     public static readonly string animationGrounded = "Grounded";
+    public static readonly string animationRunning = "Running";
 
     // Lanes
     public static readonly int laneCount = 3;
