@@ -54,4 +54,9 @@ public class TTD_PauseMenu : MonoBehaviour
 	{
 		Application.Quit();
 	}
+
+	public void playAgain() // When end menu is up, this function reloads the "Game" scene
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+	}
 }
