@@ -10,6 +10,11 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI p1Score, p2Score;
     public Slider p1Progress, p2Progress;
     public GameObject[] p1Item, p2Item;
+    public GameObject countdown;
+
+    void Start() {
+
+    }
 
     void Update(){
         p1Score.text = env1.player.GetTokens().ToString("0");
@@ -17,7 +22,7 @@ public class GameManager : MonoBehaviour
         p1Progress.value = env1.GetPlayerProgress();
         p2Progress.value = env2.GetPlayerProgress();
         updateItem(p1Item, env1.player.GetPower());
-        updateItem(p2Item, env2.player.GetPower());        
+        updateItem(p2Item, env2.player.GetPower());
     }
 
     private void updateItem(GameObject[] UI, Power power){

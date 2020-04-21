@@ -5,7 +5,7 @@ using TMPro;
 
 public class Countdown : MonoBehaviour
 {
-    public static float timeLeft = 3;
+    public static float timeLeft;
 
     public TextMeshProUGUI countText1;
     public TextMeshProUGUI countText2;
@@ -14,6 +14,7 @@ public class Countdown : MonoBehaviour
 
     void Start()
     {
+        timeLeft = 3;
         countText1.gameObject.SetActive(true);
         countText2.gameObject.SetActive(true);
     }
@@ -54,7 +55,6 @@ public class Countdown : MonoBehaviour
         {
             countText1.gameObject.SetActive(false);
             countText2.gameObject.SetActive(false);
-            Destroy(this);
         }
 
     }

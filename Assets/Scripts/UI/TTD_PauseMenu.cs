@@ -10,6 +10,9 @@ public class TTD_PauseMenu : MonoBehaviour
 	public GameObject pauseMenu;
 	AudioSource audioSource;
 
+	void Start() {
+		gameIsRunning = true;
+	}
 
 	void Update()
     {
