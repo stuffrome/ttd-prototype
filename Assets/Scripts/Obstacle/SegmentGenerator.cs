@@ -6,7 +6,7 @@ public class SegmentGenerator : MonoBehaviour
 {
     private const int CONTINUOUS_SEGS_MAX = 5;
     private const float DEFAULT_SEGMENT_LENGTH = 22.5f;
-    private const int MAX_SPAWN_DISTANCE = 130;
+    private const int MAX_SPAWN_DISTANCE = 200;
     private const int DESPAWN_BUFFER = 30;
     private const int TERRAIN_LENGTH = 6;
     private const int MAX = 10;
@@ -67,7 +67,7 @@ public class SegmentGenerator : MonoBehaviour
     }
 
     private void GenerateSegment() {
-        if (spawnedSegsCount < 3) {
+        if (spawnedSegsCount < 1) {
             SpawnTransition(false);
         }
         else
@@ -193,7 +193,7 @@ public class SegmentGenerator : MonoBehaviour
         return terrainObj;
     }
 
-    public float GetSegmentProgress(){        
+    public float GetSegmentProgress(){
         return ((float)spawnedSegsCount)/segSpawnLimit;
     }
 }

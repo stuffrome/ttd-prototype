@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 1, g: 1, b: 1, a: 1}
+  m_FogColor: {r: 0.21960784, g: 0.20392157, b: 0.16078432, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.02
   m_LinearFogStart: 0
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2761509934492030709}
-  m_IndirectSpecularColor: {r: 0.12369681, g: 0.117448606, b: 0.09758424, a: 1}
+  m_IndirectSpecularColor: {r: 0.123731695, g: 0.11755877, b: 0.09767706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1108,20 +1108,17 @@ MonoBehaviour:
   - {fileID: 6473430382024438407, guid: a3524c2ac265e412f9ee8ed586152fb6, type: 3}
   - {fileID: 1700316353819355516, guid: d9acd15b446b34f3bac462370cf7db4e, type: 3}
   volcanoTerrains:
-  - {fileID: 1376689114808460578, guid: fb589628e26c546558fabb3e312e86ff, type: 3}
+  - {fileID: 1795195855364153408, guid: 537e9534764e44587b9060fa4fbfda8f, type: 3}
   - {fileID: 6620111509770780104, guid: 75eae45e562ba4028995da8072e7a6b7, type: 3}
   - {fileID: 824434289367104596, guid: 473e5690b584e4cc887925378b206786, type: 3}
-  - {fileID: 1795195855364153408, guid: 537e9534764e44587b9060fa4fbfda8f, type: 3}
   jungleTerrains:
-  - {fileID: 1776832284115832854, guid: c5754c90f58574ce0aefb5f48c427e7b, type: 3}
+  - {fileID: 5239405925747014401, guid: 667c24aba041a4b54acd0a527f8db667, type: 3}
   - {fileID: 3911000391593880958, guid: c79a31742fca941d99dc53cbf0d23406, type: 3}
   - {fileID: 5150711240876487793, guid: c36862e644a0f4f7bb3a2c5b69d195ea, type: 3}
-  - {fileID: 5239405925747014401, guid: 667c24aba041a4b54acd0a527f8db667, type: 3}
   beachTerrains:
-  - {fileID: 7385457014249918065, guid: de62e7ec8bd0b49e2b3db338a28a236f, type: 3}
+  - {fileID: 6313406531888475783, guid: b1c934ef532be4d85a1b50083956ab3c, type: 3}
   - {fileID: 1733002467024734055, guid: 411e49561e41f4898a868120d395494a, type: 3}
   - {fileID: 6141531747319392996, guid: 7501bacd7ffc842ccba4740126a49ac0, type: 3}
-  - {fileID: 6313406531888475783, guid: b1c934ef532be4d85a1b50083956ab3c, type: 3}
   endTerrain: {fileID: 1871810381}
 --- !u!1 &338033506
 GameObject:
@@ -3392,7 +3389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -85}
+  m_AnchoredPosition: {x: 0, y: -71}
   m_SizeDelta: {x: 658, y: 171}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1035660149
@@ -3642,7 +3639,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1157420956
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4047,20 +4044,17 @@ MonoBehaviour:
   - {fileID: 6473430382024438407, guid: a3524c2ac265e412f9ee8ed586152fb6, type: 3}
   - {fileID: 1700316353819355516, guid: d9acd15b446b34f3bac462370cf7db4e, type: 3}
   volcanoTerrains:
-  - {fileID: 1376689114808460578, guid: fb589628e26c546558fabb3e312e86ff, type: 3}
+  - {fileID: 1795195855364153408, guid: 537e9534764e44587b9060fa4fbfda8f, type: 3}
   - {fileID: 6620111509770780104, guid: 75eae45e562ba4028995da8072e7a6b7, type: 3}
   - {fileID: 824434289367104596, guid: 473e5690b584e4cc887925378b206786, type: 3}
-  - {fileID: 1795195855364153408, guid: 537e9534764e44587b9060fa4fbfda8f, type: 3}
   jungleTerrains:
-  - {fileID: 1776832284115832854, guid: c5754c90f58574ce0aefb5f48c427e7b, type: 3}
+  - {fileID: 5239405925747014401, guid: 667c24aba041a4b54acd0a527f8db667, type: 3}
   - {fileID: 3911000391593880958, guid: c79a31742fca941d99dc53cbf0d23406, type: 3}
   - {fileID: 5150711240876487793, guid: c36862e644a0f4f7bb3a2c5b69d195ea, type: 3}
-  - {fileID: 5239405925747014401, guid: 667c24aba041a4b54acd0a527f8db667, type: 3}
   beachTerrains:
-  - {fileID: 7385457014249918065, guid: de62e7ec8bd0b49e2b3db338a28a236f, type: 3}
+  - {fileID: 6313406531888475783, guid: b1c934ef532be4d85a1b50083956ab3c, type: 3}
   - {fileID: 1733002467024734055, guid: 411e49561e41f4898a868120d395494a, type: 3}
   - {fileID: 6141531747319392996, guid: 7501bacd7ffc842ccba4740126a49ac0, type: 3}
-  - {fileID: 6313406531888475783, guid: b1c934ef532be4d85a1b50083956ab3c, type: 3}
   endTerrain: {fileID: 1719477946}
 --- !u!4 &1270950283
 Transform:
@@ -4419,7 +4413,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -480, y: -17.001953}
+  m_AnchoredPosition: {x: -480, y: -17.001984}
   m_SizeDelta: {x: 960, y: -684.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425207759
@@ -4469,7 +4463,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 422.55
+  m_fontSize: 247.3
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4884,7 +4878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 479.99994, y: -17}
+  m_AnchoredPosition: {x: 479.99994, y: -17.00003}
   m_SizeDelta: {x: 960, y: -685.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1559417670
@@ -4934,7 +4928,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 421.95
+  m_fontSize: 246.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

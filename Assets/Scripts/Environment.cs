@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Environment : MonoBehaviour
 {
-    private const int DEFAULT_SEGMENT_COUNT = 30;
-
     public SegmentGenerator segmentGenerator;
 
     public Player player { get; private set; }
@@ -26,7 +24,7 @@ public class Environment : MonoBehaviour
     private void SetupSegmentGenerator()
     {
         Vector3 startPosition = playerObject.transform.position;
-        segmentGenerator.Setup(startPosition, DEFAULT_SEGMENT_COUNT);
+        segmentGenerator.Setup(startPosition, Constants.segmentSpawnCount);
     }
 
     public GameObject GetPlayerObject()
