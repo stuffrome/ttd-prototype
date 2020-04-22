@@ -19,6 +19,7 @@ public static class Constants
 
     //Tags
     public static readonly string tagPlayer = "Player";
+    public static readonly string tagPlayerRig = "Rig";
 
     //Offsets
     public static readonly Vector3 cameraPosition = new Vector3(0f, 2.18f, -3f);

@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     private Blessing blessing;
     private Blessing emptyBlessing = new Blessing();
 
+    public GameObject playerRig;
+
     void Start()
     {
         tokenCount = 0;

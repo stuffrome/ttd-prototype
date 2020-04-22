@@ -7,6 +7,7 @@ TagManager:
   - Environment2
   - Environment1
   - EndText
+  - Rig
   layers:
   - Default
   - TransparentFX
