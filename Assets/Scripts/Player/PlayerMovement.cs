@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float gravity = 38f;
     [SerializeField]
-    private float baseSpeed = 8.5f;
+    private float baseSpeed = 8.8f;
     private float speedMultiplier = 1.0f;
     private bool isReverse = false;
 
