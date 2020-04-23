@@ -216,8 +216,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Reverse(){
-        isReverse = true;
-        Invoke("UnReverse", 5f);
+        isReverse = true;        
     }
 
     public void UnReverse(){

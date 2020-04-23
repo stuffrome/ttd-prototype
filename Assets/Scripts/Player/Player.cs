@@ -79,6 +79,16 @@ public class Player : MonoBehaviour
     public void Reverse()
     {
         movement.Reverse();
+        GameObject reverseAnim = (GameObject)Instantiate(Resources.Load("Reverse"));
+        reverseAnim.GetComponent<ReverseMovement>().lookAt = transform;
+        float dur = 5f;
+        Invoke("UnReverse", dur);
+        Destroy(reverseAnim, dur);
+    }
+
+    private void UnReverse()
+    {
+        movement.UnReverse();
     }
 
     public void SetMoving(bool moving)
@@ -98,7 +108,12 @@ public class Player : MonoBehaviour
     }
 
     private IEnumerator Thunderstrike(int targetLane){
-        yield return new WaitForSeconds(3f);
+        if(GetLane() == targetLane) Hit();
+        yield return new WaitForSeconds(1f);
+        if(GetLane() == targetLane) Hit();
+        yield return new WaitForSeconds(1f);
+        if(GetLane() == targetLane) Hit();
+        yield return new WaitForSeconds(1f);
         if(GetLane() == targetLane) Hit();
     }
 
@@ -110,10 +125,10 @@ public class Player : MonoBehaviour
         Color initColor = renderer.material.color;
         renderer.material.color = new Color(initColor.r, initColor.g, initColor.b, 0f);
 
-        StartCoroutine(Nophantm(controller, renderer, initColor));
+        StartCoroutine(UnPhantm(controller, renderer, initColor));
     }
 
-    private IEnumerator Nophantm(CharacterController controller, Renderer renderer, Color initColor){
+    private IEnumerator UnPhantm(CharacterController controller, Renderer renderer, Color initColor){
         yield return new WaitForSeconds(5f);
         controller.detectCollisions = true;
         renderer.material.color = initColor;
