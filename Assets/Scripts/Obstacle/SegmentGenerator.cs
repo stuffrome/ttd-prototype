@@ -15,6 +15,7 @@ public class SegmentGenerator : MonoBehaviour
     private int activeSegCount;
     private int continuousSegCount;
     private int spawnedSegsCount;
+    private int despawnedSegsCount;
 
     private int segSpawnLimit;
     private int firstTransition;
@@ -62,6 +63,7 @@ public class SegmentGenerator : MonoBehaviour
             if (activeSegs[i].transform.position.z < playerPosition.z - DESPAWN_BUFFER) {
                 activeSegs[i].Despawn();
                 activeSegs.RemoveAt(i);
+                despawnedSegsCount++;
             }
         }
     }
@@ -194,6 +196,6 @@ public class SegmentGenerator : MonoBehaviour
     }
 
     public float GetSegmentProgress(){
-        return ((float)spawnedSegsCount)/segSpawnLimit;
+        return ((float)despawnedSegsCount)/segSpawnLimit;
     }
 }

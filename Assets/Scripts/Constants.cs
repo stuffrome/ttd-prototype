@@ -5,7 +5,7 @@ using UnityEngine;
 public static class Constants
 {
     // Environment
-    public static readonly int segmentSpawnCount = 30;
+    public static readonly int segmentSpawnCount = 40;
 
     // Animation Triggers
     public static readonly string animationJump = "Jump";
